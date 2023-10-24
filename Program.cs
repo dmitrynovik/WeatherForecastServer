@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,7 +9,7 @@ using Steeltoe.Messaging.RabbitMQ.Extensions;
 using Steeltoe.Messaging.RabbitMQ.Host;
 using Steeltoe.Stream.Extensions;
 using Steeltoe.Stream.StreamHost;
-using WeatherServer.Services;
+using WeatherForecastServer.Services;
 
 namespace WeatherForecastServer
 {
