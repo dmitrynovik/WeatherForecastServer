@@ -44,7 +44,7 @@ namespace WeatherForecastServer.Services
         {
            const double lat = -33.52;
            const double lon = 151.12;
-           const string name = "Sydney, NSW, Australia";
+           const string name = "Sydney";
 
             var url = $"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,windspeed_10m&hourly=temperature_2m,relativehumidity_2m,windspeed_10m";
             _logger.LogInformation("Producing a forecast for: " + name);
