@@ -4,11 +4,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Steeltoe.Common.Hosting;
 using Steeltoe.Connector.RabbitMQ;
-using Steeltoe.Extensions.Logging;
 using Steeltoe.Messaging.RabbitMQ.Extensions;
 using Steeltoe.Messaging.RabbitMQ.Host;
-using Steeltoe.Stream.Extensions;
-using Steeltoe.Stream.StreamHost;
 using WeatherForecastServer.Services;
 
 namespace WeatherForecastServer
@@ -35,6 +32,8 @@ namespace WeatherForecastServer
 
                   services.AddHttpClient();
               })
+              .UseCloudHosting(55006)
+              .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
               .Build()
               .Run();
         }

@@ -30,7 +30,7 @@ namespace WeatherForecastServer.Services
         {
             _logger.LogInformation($"Starting {nameof(WeatherService)}");
 
-            timer = new Timer(Sender, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(15));
+            timer = new Timer(Sender, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(5));
             return Task.CompletedTask;
         }
 

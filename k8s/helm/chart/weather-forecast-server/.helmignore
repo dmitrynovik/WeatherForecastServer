@@ -23,3 +23,5 @@
 .vscode/
 
 deploy.sh
+
+*.tgz
