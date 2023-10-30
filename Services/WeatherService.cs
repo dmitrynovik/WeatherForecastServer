@@ -49,7 +49,7 @@ namespace WeatherForecastServer.Services
             var url = $"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,windspeed_10m&hourly=temperature_2m,relativehumidity_2m,windspeed_10m";
             _logger.LogInformation("Producing a forecast for: " + name);
 
-            var client = _httpClientFactory.CreateClient();        
+            using var client = _httpClientFactory.CreateClient();        
             var forecast = client.GetFromJsonAsync<WeatherForecast>(url).GetAwaiter().GetResult();
             forecast.Name = name;
             template.ConvertAndSend("weather", "", System.Text.Json.JsonSerializer.Serialize(forecast));
